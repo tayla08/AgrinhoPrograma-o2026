@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroClima Paraná</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🌱 AgroClima Paraná</h1>
+    <p>Monitoramento de chuva para agricultura</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Escolha a cidade</h2>
+
+        <select id="cidadeSelect"></select>
+
+        <div style="margin-top:20px;">
+            <label><b>🌾 Quantidade de hectares</b></label>
+
+            <input
+                type="number"
+                id="hectares"
+                value="1"
+                min="1"
+                class="input-hectares"
+            >
+        </div>
+
+        <div class="info">
+            📍 Cidade:
+            <span id="cidadeNome">-</span>
+        </div>
+
+        <div class="info">
+            🌧️ Chuva prevista:
+            <span id="chuva">-</span> mm
+        </div>
+
+        <div class="info">
+            🌡️ Temperatura máxima:
+            <span id="temp">-</span> °C
+        </div>
+
+        <div class="info">
+            🚿 Água recomendada:
+            <span id="agua">-</span> litros
+        </div>
+
+        <div class="info">
+            💧 Economia de água:
+            <span id="economia">-</span> litros
+        </div>
+
+        <div id="resultado" class="resultado">
+            Carregando...
+        </div>
+
+        <div class="legenda">
+
+            <h3>Legenda do mapa</h3>
+
+            <div class="item-legenda">
+                <div class="cor verde-cor"></div>
+                Pouca chuva
+            </div>
+
+            <div class="item-legenda">
+                <div class="cor laranja-cor"></div>
+                Chuva moderada
+            </div>
+
+            <div class="item-legenda">
+                <div class="cor vermelha-cor"></div>
+                Chuva forte
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="map"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
